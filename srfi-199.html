@@ -20,9 +20,10 @@ The editor will add this section.
 <h2>Abstract</h2>
 
 <p>The majority of P<small>OSIX</small> system and library calls
-  require accessing errno to discern the specific cause of an error,
-  and some require setting it to 0 before calling them.  This SRFI
-  specifies procedures to both retrieve its value, and to set it.
+  require accessing <code>errno</code> to discern the specific cause
+  of an error, and some require setting it to 0 before calling them.
+  This SRFI specifies procedures to both retrieve its value, and to
+  set it.
 </p>
 
 <h2>Issues</h2>
@@ -31,29 +32,27 @@ The editor will add this section.
 
 <h2>Rationale</h2>
 
-<p>Errno is a
-  <a href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/errno.html">P<small>OSIX</small> lvalue</a>,
+<p>The <a href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/errno.html">P<small>OSIX</small> lvalue</a> <code>errno</code> is
   implemented as "a macro or an identifier declared with external
   linkage".  It does not fit into the paradigm of
 
-  many??
+  many
 
   autogenerating FFIs such as Chibi Scheme's, and for the latter must
-  be hand coded.  Its value is required to use SRFI 198,
-  P<small>OSIX</small> system call exceptions, which does not provide
+  be hand coded.  Its value is required when using SRFI 198 <em>P<small>OSIX</small> system call exceptions</em>, which does not provide
   a procedure to get its value.  This SRFI will allow many
   implementers of P<small>OSIX</small> interfaces to focus on their
   particular system or library calls of interest without also
-  providing these errno procedures, or importing them from another
-  more general library.
+  providing these <code>errno</code> procedures or importing them
+  from another more general library.
 <p>
 
 <h2>Specification</h2>
 
 <div><code>(errno)</code> &nbsp;&nbsp;&nbsp;&rarr; &nbsp;&nbsp;&nbsp;<i>integer</i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(procedure)</div>
-<p>Returns the current value of errno.</p>
+<p>Returns the current value of <code>errno</code>.</p>
 <div><code>(set-errno! <i>errno</i>)</code> &nbsp;&nbsp;&nbsp;&rarr; &nbsp;&nbsp;&nbsp;<i>undefined</i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(procedure)</div>
-<p>Sets the current value of errno.</p>
+<p>Sets the current value of <code>errno</code>.</p>
 
 <h2>Implementation</h2>
 
