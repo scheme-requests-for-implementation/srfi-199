@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SRFI ?: POSIX errno manipulation</title>
+    <link href="favicon.png" rel="icon" sizes="192x192" type="image/png">
+    <link rel="stylesheet" href="/srfi.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"></head>
+  <body>
+    <h1><a href="https://srfi.schemers.org/"><img class="srfi-logo" src="https://srfi.schemers.org/srfi-logo.svg" alt="SRFI logo" /></a>??? from above</h1>
+
+<p>by Harold Ancell</p>
+
+<h2>Status</h2>
+
+??? the draft/final/withdrawn status of the SRFI, information on how
+to subscribe to its mailing list, and important dates in its history.
+The editor will add this section.
+
+<h2>Abstract</h2>
+
+<p>The majority of P<small>OSIX</small> system and library calls
+  require accesing errno to discern the specific cause of an error,
+  and some require setting it to 0 before calling them.  This SRFI
+  specifies procedures to both retrieve its value, and to set it.
+</p>
+
+<h2>Issues</h2>
+
+<p>None at present.</p>
+
+<h2>Rationale</h2>
+
+<p>Errno is a
+  <a href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/errno.html">P<small>OSIX</small> lvalue</a>,
+  implimented as "a macro or an identifier declared with external
+  linkage".  It does not fit into the paradigm of
+
+  many??
+
+  autogenerating FFIs such as Chibi Scheme's, and for the latter must
+  be hand coded.  Its value is required to use SRFI 198,
+  P<small>OSIX</small> system call exceptions, which does not provide
+  a procedure to get its value.  This SRFI will allow many
+  implementers of P<small>OSIX</small> interfaces to focus on their
+  particular system or library calls of interest without also
+  providing these errnor procedures, or importing them from another
+  more general library.
+<p>
+
+<h2>Specification</h2>
+
+<p><div align="left"><code>(errno)</code> &nbsp;&nbsp;&nbsp;&rarr; &nbsp;&nbsp;&nbsp;<i>integer</i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(procedure)</div></p>
+<p>Returns the current value of errno.</p>
+<p><div align="left"><code>(set-errno! <i>errno</i>)</code> &nbsp;&nbsp;&nbsp;&rarr; &nbsp;&nbsp;&nbsp;<i>undefined</i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(procedure)</div></p>
+<p>Sets the current value of errno.</p>
+
+<h2>Implementation</h2>
+
+<p>To be supplied for Chibi Scheme from its SRFI 170 sample implementation.</p>
+
+<h2>Acknowledgements</h2>
+
+Thanks to Olin Shivers and John Cowan for SRFI 170, and to the latter for SRFI 198.
+
+<h2>Copyright</h2>
+Copyright &copy; Harold Ancell (2020).
+
+<p>
+  Permission is hereby granted, free of charge, to any person
+  obtaining a copy of this software and associated documentation files
+  (the "Software"), to deal in the Software without restriction,
+  including without limitation the rights to use, copy, modify, merge,
+  publish, distribute, sublicense, and/or sell copies of the Software,
+  and to permit persons to whom the Software is furnished to do so,
+  subject to the following conditions:
+
+<p>
+  The above copyright notice and this permission notice (including the
+  next paragraph) shall be included in all copies or substantial
+  portions of the Software.
+<p>
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+  NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+  BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+  ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+
+  <hr>
+  <address>Editor: <a href="mailto:srfi-editors+at+srfi+dot+schemers+dot+org">Arthur A. Gleckler</a></address></body></html>
