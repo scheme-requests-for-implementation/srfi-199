@@ -20,7 +20,7 @@ The editor will add this section.
 <h2>Abstract</h2>
 
 <p>The majority of P<small>OSIX</small> system and library calls
-  require accesing errno to discern the specific cause of an error,
+  require accessing errno to discern the specific cause of an error,
   and some require setting it to 0 before calling them.  This SRFI
   specifies procedures to both retrieve its value, and to set it.
 </p>
@@ -33,7 +33,7 @@ The editor will add this section.
 
 <p>Errno is a
   <a href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/errno.html">P<small>OSIX</small> lvalue</a>,
-  implimented as "a macro or an identifier declared with external
+  implemented as "a macro or an identifier declared with external
   linkage".  It does not fit into the paradigm of
 
   many??
@@ -44,7 +44,7 @@ The editor will add this section.
   a procedure to get its value.  This SRFI will allow many
   implementers of P<small>OSIX</small> interfaces to focus on their
   particular system or library calls of interest without also
-  providing these errnor procedures, or importing them from another
+  providing these errno procedures, or importing them from another
   more general library.
 <p>
 
