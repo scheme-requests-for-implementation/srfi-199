@@ -11,11 +11,13 @@
 
 <p>by Harold Ancell</p>
 
+
 <h2>Status</h2>
 
 ??? the draft/final/withdrawn status of the SRFI, information on how
 to subscribe to its mailing list, and important dates in its history.
 The editor will add this section.
+
 
 <h2>Abstract</h2>
 
@@ -26,9 +28,11 @@ The editor will add this section.
   set it.
 </p>
 
+
 <h2>Issues</h2>
 
 <p>None at present.</p>
+
 
 <h2>Rationale</h2>
 
@@ -48,20 +52,41 @@ The editor will add this section.
   from another more general library.
 <p>
 
+
 <h2>Specification</h2>
 
-<div><code>(errno)</code> &nbsp;&nbsp;&nbsp;&rarr; &nbsp;&nbsp;&nbsp;<i>integer</i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(procedure)</div>
-<p>Returns the current value of <code>errno</code>.</p>
-<div><code>(set-errno! <i>errno</i>)</code> &nbsp;&nbsp;&nbsp;&rarr; &nbsp;&nbsp;&nbsp;<i>undefined</i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(procedure)</div>
-<p>Sets the current value of <code>errno</code>.</p>
+<dl>
+<dt><code>(errno)</code> &nbsp;&nbsp;&nbsp;&rarr; &nbsp;&nbsp;&nbsp;<i>exact integer</i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(procedure)</dt>
+<dd>
+<p>Returns the current value of <code>errno</code>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(errno) &rArr; 2
+</pre></td></tr></table>
+</dd>
+</dl>
+
+<dl>
+<dt> <code>(set-errno! <i>errno</i>)</code> &nbsp;&nbsp;&nbsp;&rarr; &nbsp;&nbsp;&nbsp;<i>undefined</i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(procedure)</dt>
+<dd>
+<p>Sets the current value of <code>errno</code>, where the argument <code><i>errno</i></code> is an exact integer.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(errno) &rArr; 2
+(set-errno! 0)
+(errno) &rArr; 0
+</pre></td></tr></table>
+</dd>
+</dl>
+
 
 <h2>Implementation</h2>
 
 <p>To be supplied for Chibi Scheme from its SRFI 170 sample implementation.</p>
 
+
 <h2>Acknowledgements</h2>
 
 Thanks to Olin Shivers and John Cowan for SRFI 170, and to the latter for SRFI 198.
+
 
 <h2>Copyright</h2>
 Copyright &copy; Harold Ancell (2020).
