@@ -11,24 +11,28 @@
 
 <p>by Harold Ancell</p>
 
+
 <h2>Status</h2>
 
 ??? the draft/final/withdrawn status of the SRFI, information on how
 to subscribe to its mailing list, and important dates in its history.
 The editor will add this section.
 
+
 <h2>Abstract</h2>
 
 <p>The majority of P<small>OSIX</small> system and library calls
   require accessing <code>errno</code> to discern the specific cause
-  of an error, and some require setting it to 0 before calling them.
+  of an error, and some require setting it to 0 before being called.
   This SRFI specifies procedures to both retrieve its value, and to
   set it.
 </p>
 
+
 <h2>Issues</h2>
 
 <p>None at present.</p>
+
 
 <h2>Rationale</h2>
 
@@ -39,28 +43,50 @@ The editor will add this section.
   many
 
   autogenerating FFIs such as Chibi Scheme's, and for the latter must
-  be hand coded.  Its value is required when using SRFI 198 <em>P<small>OSIX</small> system call exceptions</em>, which does not provide
-  a procedure to get its value.  This SRFI will allow many
+  be hand coded.  Its value is required when using SRFI 198
+  <em>P<small>OSIX</small> system call exceptions</em>, which does not
+  provide a procedure to get its value.  This SRFI will allow many
   implementers of P<small>OSIX</small> interfaces to focus on their
   particular system or library calls of interest without also
   providing these <code>errno</code> procedures or importing them
   from another more general library.
 <p>
 
+
 <h2>Specification</h2>
 
-<div><code>(errno)</code> &nbsp;&nbsp;&nbsp;&rarr; &nbsp;&nbsp;&nbsp;<i>integer</i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(procedure)</div>
-<p>Returns the current value of <code>errno</code>.</p>
-<div><code>(set-errno! <i>errno</i>)</code> &nbsp;&nbsp;&nbsp;&rarr; &nbsp;&nbsp;&nbsp;<i>undefined</i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(procedure)</div>
-<p>Sets the current value of <code>errno</code>.</p>
+<dl>
+<dt><code>(errno)</code> &nbsp;&nbsp;&nbsp;&rarr; &nbsp;&nbsp;&nbsp;<i>exact integer</i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(procedure)</dt>
+<dd>
+<p>Returns the current value of <code>errno</code>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(errno) &rArr; 2
+</pre></td></tr></table>
+</dd>
+</dl>
+
+<dl>
+<dt> <code>(set-errno! <i>errno</i>)</code> &nbsp;&nbsp;&nbsp;&rarr; &nbsp;&nbsp;&nbsp;<i>undefined</i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(procedure)</dt>
+<dd>
+<p>Sets the current value of <code>errno</code>, where the argument <code><i>errno</i></code> is an exact integer.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(errno) &rArr; 2
+(set-errno! 0)
+(errno) &rArr; 0
+</pre></td></tr></table>
+</dd>
+</dl>
+
 
 <h2>Implementation</h2>
 
 <p>To be supplied for Chibi Scheme from its SRFI 170 sample implementation.</p>
 
+
 <h2>Acknowledgements</h2>
 
 Thanks to Olin Shivers and John Cowan for SRFI 170, and to the latter for SRFI 198.
+
 
 <h2>Copyright</h2>
 Copyright &copy; Harold Ancell (2020).
