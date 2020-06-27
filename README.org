@@ -4,7 +4,7 @@
 
 
 
-keywords: [[https://srfi.schemers.org/?keywords=operating-system][Operating System]]
+keywords: [[https://srfi.schemers.org/?keywords=error-handling][Error Handling]], [[https://srfi.schemers.org/?keywords=operating-system][Operating System]]
 
 This repository hosts [[https://srfi.schemers.org/srfi-199/][SRFI 199]]: POSIX errno manipulation, a [[https://srfi.schemers.org/][Scheme Request for Implementation]].
 
