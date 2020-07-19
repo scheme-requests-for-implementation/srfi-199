@@ -22,8 +22,8 @@
     <h1>SRFI 199: POSIX errno manipulation</h1>
     <p class="authors">by Harold Ancell</p>
     <p class="based-on"></p>
-    <p class="status">status: <em>draft</em> (2020-06-25)</p>
-    <p class="keywords">keywords: <a href="https://srfi.schemers.org/?keywords=error-handling">Error Handling</a>, <a href="https://srfi.schemers.org/?keywords=operating-system">Operating System</a></p><span class="see-also">See also <a href="/srfi-170/">SRFI 170: POSIX API</a> and <a href="/srfi-198/">SRFI 198: POSIX system call exceptions</a>.</span>
+    <p class="status">status: <em>withdrawn</em> (2020-07-19)</p>
+    <p class="keywords">keywords: <a href="https://srfi.schemers.org/?keywords=error-handling">Error Handling</a>, <a href="https://srfi.schemers.org/?keywords=operating-system">Operating System</a></p><span class="see-also">See also <a href="/srfi-170/">SRFI 170: POSIX API</a> and <a href="/srfi-198/">SRFI 198: Foreign Interface Error Handling</a>.</span>
 
     <ul class="info">
       <li><a href="srfi-199.html">The SRFI Document</a></li>
@@ -78,7 +78,7 @@
                    value="srfi-199@srfi.schemers.org"></form></a></li></ul>
     <h2>Abstract</h2><p>The majority of P<small>OSIX</small> system and library calls
   require accessing <code>errno</code> to discern the specific cause
-  of an error, and some require setting it to 0 before calling them.
+  of an error, and some require setting it to 0 before being called.
   This SRFI specifies procedures to both retrieve its value, and to
   set it.
 </p></body></html>
