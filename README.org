@@ -10,7 +10,7 @@ This repository hosts [[https://srfi.schemers.org/srfi-199/][SRFI 199]]: POSIX e
 
 This SRFI is in /withdrawn/ status.
 
-See also [[https://srfi.schemers.org/srfi-170/][SRFI 170: POSIX API]] and [[https://srfi.schemers.org/srfi-198/][SRFI 198: Foreign Interface Error Handling]].
+See also [[https://srfi.schemers.org/srfi-170/][SRFI 170: POSIX API]] and [[https://srfi.schemers.org/srfi-198/][SRFI 198: Foreign Interface Status]].
 
 The full documentation for this SRFI can be found in the [[https://srfi.schemers.org/srfi-199/srfi-199.html][SRFI Document]].
 
